@@ -1,6 +1,6 @@
 /*
  *     File: Main.java
- *     Last Modified: 6/20/20, 8:55 PM
+ *     Last Modified: 6/20/20, 9:37 PM
  *     Project: AdvancedJoinMessages
  *     Copyright (C) 2020 CoachL_ck
  *
@@ -20,7 +20,7 @@
 
 package io.github.coachluck.advancedjoinmessages;
 
-import io.github.coachluck.advancedjoinmessages.Utils.Util;
+import io.github.coachluck.advancedjoinmessages.utils.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -47,16 +47,12 @@ public final class Main extends JavaPlugin {
             new JoinLeaveListener();
             getCommand("ajm").setExecutor(new MainCommand());
         } else {
-            throw new RuntimeException("Could not find PlaceholderAPI!! Plugin can not work without it!");
+            Bukkit.getLogger().warning("PlaceholderAPI must be installed!");
+            onDisable();
         }
 
         leaveMessage = getMessageList("Messages.Leave.Text");
         joinMessage = getMessageList("Messages.Join.Text");
-    }
-
-    @Override
-    public void onDisable() {
-
     }
 
     /**
@@ -73,7 +69,7 @@ public final class Main extends JavaPlugin {
         Pattern p = Pattern.compile(Pattern.quote(pattern1) + "(.*?)" + Pattern.quote(pattern2));
         Matcher m = p.matcher(text);
         while (m.find()) {
-            parts.add(Util.format(m.group(1)));
+            parts.add(Utils.format(m.group(1)));
         }
         return parts;
     }

@@ -1,6 +1,6 @@
 /*
- *     File: Util.java
- *     Last Modified: 6/20/20, 8:55 PM
+ *     File: Utils.java
+ *     Last Modified: 6/20/20, 9:37 PM
  *     Project: AdvancedJoinMessages
  *     Copyright (C) 2020 CoachL_ck
  *
@@ -18,12 +18,12 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package io.github.coachluck.advancedjoinmessages.Utils;
+package io.github.coachluck.advancedjoinmessages.utils;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 
-public class Util {
+public class Utils {
 
     /**
      * Colorizes a string

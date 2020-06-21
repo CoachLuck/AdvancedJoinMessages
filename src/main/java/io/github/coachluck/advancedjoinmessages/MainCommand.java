@@ -1,6 +1,6 @@
 /*
  *     File: MainCommand.java
- *     Last Modified: 6/20/20, 8:55 PM
+ *     Last Modified: 6/20/20, 9:37 PM
  *     Project: AdvancedJoinMessages
  *     Copyright (C) 2020 CoachL_ck
  *
@@ -20,7 +20,7 @@
 
 package io.github.coachluck.advancedjoinmessages;
 
-import io.github.coachluck.advancedjoinmessages.Utils.Util;
+import io.github.coachluck.advancedjoinmessages.utils.Utils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -32,11 +32,11 @@ public class MainCommand implements CommandExecutor {
 
         Main plugin = Main.getPlugin(Main.class);
         if(!sender.hasPermission(plugin.getConfig().getString("General.Reload-Permission"))) {
-            Util.sendMsg(sender, plugin.getConfig().getString("General.Permission-Message"));
+            Utils.sendMsg(sender, plugin.getConfig().getString("General.Permission-Message"));
         }
         plugin.reloadMessages();
 
-        Util.sendMsg(sender, plugin.getConfig().getString("General.Reloaded-Message"));
+        Utils.sendMsg(sender, plugin.getConfig().getString("General.Reloaded-Message"));
         return true;
     }
 
