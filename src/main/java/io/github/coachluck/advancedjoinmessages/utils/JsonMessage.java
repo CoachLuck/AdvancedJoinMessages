@@ -113,7 +113,6 @@ public class JsonMessage {
     public static class JsonStringBuilder {
 
         private final JsonMessage message;
-        //private final String string;
         private final String string = ",{\"text\":\"\",\"extra\":[";
         private final String[] strings;
         private String hover = "";
