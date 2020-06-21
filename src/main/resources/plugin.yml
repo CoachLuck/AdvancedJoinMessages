@@ -1,0 +1,12 @@
+name: AdvancedJoinMessages
+version: ${project.version}
+main: io.github.coachluck.advancedjoinmessages.Main
+prefix: AdvJoin
+softdepend: [PlaceholderAPI]
+authors: [CoachLuck]
+description: Add hover events and command executables to join messages.
+website: https://github.com/CoachLuck
+commands:
+  ajm:
+    description: Base command for Advanced Join Messages
+    usage: /ajm
