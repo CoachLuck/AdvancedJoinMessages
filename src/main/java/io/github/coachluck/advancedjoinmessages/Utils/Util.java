@@ -1,9 +1,10 @@
 package io.github.coachluck.advancedjoinmessages.Utils;
 
-import net.md_5.bungee.api.ChatColor;
+import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 
 public class Util {
+
     /**
      * Colorizes a string
      * @param str the string to colorize

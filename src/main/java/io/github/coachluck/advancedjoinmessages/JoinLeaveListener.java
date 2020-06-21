@@ -15,6 +15,7 @@ import java.util.List;
 
 
 public class JoinLeaveListener implements Listener {
+
     private final Main plugin;
 
     public JoinLeaveListener() {

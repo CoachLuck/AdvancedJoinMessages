@@ -22,6 +22,7 @@ public final class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
+
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
             new JoinLeaveListener();
             getCommand("ajm").setExecutor(new MainCommand());
