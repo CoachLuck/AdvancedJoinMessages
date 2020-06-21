@@ -1,0 +1,2 @@
+# AdvancedJoinMessages
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/743a529ccb6947b0912b0a504593db69)](https://app.codacy.com/manual/CoachLuck/AdvancedJoinMessages?utm_source=github.com&utm_medium=referral&utm_content=CoachLuck/AdvancedJoinMessages&utm_campaign=Badge_Grade_Dashboard)
