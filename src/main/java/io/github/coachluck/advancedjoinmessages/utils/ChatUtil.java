@@ -1,6 +1,6 @@
 /*
- *     File: Utils.java
- *     Last Modified: 6/20/20, 9:37 PM
+ *     File: ChatUtil.java
+ *     Last Modified: 6/20/20, 9:41 PM
  *     Project: AdvancedJoinMessages
  *     Copyright (C) 2020 CoachL_ck
  *
@@ -23,7 +23,7 @@ package io.github.coachluck.advancedjoinmessages.utils;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 
-public class Utils {
+public class ChatUtil {
 
     /**
      * Colorizes a string

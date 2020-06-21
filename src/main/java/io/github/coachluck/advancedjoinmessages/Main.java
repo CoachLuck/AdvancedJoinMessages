@@ -1,6 +1,6 @@
 /*
  *     File: Main.java
- *     Last Modified: 6/20/20, 9:37 PM
+ *     Last Modified: 6/20/20, 9:41 PM
  *     Project: AdvancedJoinMessages
  *     Copyright (C) 2020 CoachL_ck
  *
@@ -20,7 +20,7 @@
 
 package io.github.coachluck.advancedjoinmessages;
 
-import io.github.coachluck.advancedjoinmessages.utils.Utils;
+import io.github.coachluck.advancedjoinmessages.utils.ChatUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -69,7 +69,7 @@ public final class Main extends JavaPlugin {
         Pattern p = Pattern.compile(Pattern.quote(pattern1) + "(.*?)" + Pattern.quote(pattern2));
         Matcher m = p.matcher(text);
         while (m.find()) {
-            parts.add(Utils.format(m.group(1)));
+            parts.add(ChatUtil.format(m.group(1)));
         }
         return parts;
     }

@@ -1,6 +1,6 @@
 /*
  *     File: JsonMessage.java
- *     Last Modified: 6/20/20, 9:37 PM
+ *     Last Modified: 6/20/20, 9:41 PM
  *     Project: AdvancedJoinMessages
  *     Copyright (C) 2020 CoachL_ck
  *
@@ -116,7 +116,8 @@ public class JsonMessage {
         //private final String string;
         private final String string = ",{\"text\":\"\",\"extra\":[";
         private final String[] strings;
-        private String hover = "", click = "";
+        private String hover = "";
+        private String click = "";
 
         /**
          * Settings for the json message's text

@@ -1,6 +1,6 @@
 /*
  *     File: JoinLeaveListener.java
- *     Last Modified: 6/20/20, 9:37 PM
+ *     Last Modified: 6/20/20, 9:42 PM
  *     Project: AdvancedJoinMessages
  *     Copyright (C) 2020 CoachL_ck
  *
@@ -20,8 +20,8 @@
 
 package io.github.coachluck.advancedjoinmessages;
 
+import io.github.coachluck.advancedjoinmessages.utils.ChatUtil;
 import io.github.coachluck.advancedjoinmessages.utils.JsonMessage;
-import io.github.coachluck.advancedjoinmessages.utils.Utils;
 import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -94,7 +94,7 @@ public class JoinLeaveListener implements Listener {
 
             boolean hover = plugin.getConfig().getBoolean(path + "Hover.Enabled");
             boolean click = plugin.getConfig().getBoolean(path + "Click.Enabled");
-            final String hoverText = Utils.format(plugin.getConfig().getString(path + "Hover.Text").replaceAll("%player%", player.getDisplayName()));
+            final String hoverText = ChatUtil.format(plugin.getConfig().getString(path + "Hover.Text").replaceAll("%player%", player.getDisplayName()));
             final String clickType = plugin.getConfig().getString(path + "Click.Type");
             String data = plugin.getConfig().getString(path + "Click.Data").replaceAll("%player%", player.getName());
 
@@ -103,7 +103,7 @@ public class JoinLeaveListener implements Listener {
                     finalMessage.append(str).setHoverAsTooltip(hoverText).setClickAsURL(data).save();
                 }
                 else {
-                    data = Utils.format(data);
+                    data = ChatUtil.format(data);
                     if(clickType.startsWith("S") || clickType.startsWith("s")) {
                         finalMessage.append(str).setHoverAsTooltip(hoverText).setClickAsSuggestCmd(data).save();
                     } else {
