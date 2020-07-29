@@ -1,6 +1,6 @@
 /*
- *     File: MainCommand.java
- *     Last Modified: 7/28/20, 2:46 PM
+ *     File: AJMCommand.java
+ *     Last Modified: 7/28/20, 9:22 PM
  *     Project: AdvancedJoinMessages
  *     Copyright (C) 2020 CoachL_ck
  *
@@ -25,12 +25,12 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
-public class MainCommand implements CommandExecutor {
+public class AJMCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
-        Main plugin = Main.getPlugin(Main.class);
+        AJM plugin = AJM.getPlugin(AJM.class);
         if(!sender.hasPermission(plugin.getConfig().getString("General.Reload-Permission"))) {
             ChatUtil.sendMsg(sender, plugin.getConfig().getString("General.Permission-Message"));
             return true;

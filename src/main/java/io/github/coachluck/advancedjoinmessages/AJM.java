@@ -1,6 +1,6 @@
 /*
- *     File: Main.java
- *     Last Modified: 7/28/20, 9:09 PM
+ *     File: AJM.java
+ *     Last Modified: 7/28/20, 9:22 PM
  *     Project: AdvancedJoinMessages
  *     Copyright (C) 2020 CoachL_ck
  *
@@ -32,7 +32,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public final class Main extends JavaPlugin {
+public final class AJM extends JavaPlugin {
 
     public ArrayList<List<String>> joinMessage;
     public ArrayList<List<String>> leaveMessage;
@@ -54,7 +54,7 @@ public final class Main extends JavaPlugin {
         }
 
         new JoinLeaveListener();
-        getCommand("ajm").setExecutor(new MainCommand());
+        getCommand("ajm").setExecutor(new AJMCommand());
         compileMessages();
     }
 

@@ -1,6 +1,6 @@
 /*
  *     File: JoinLeaveListener.java
- *     Last Modified: 7/28/20, 9:17 PM
+ *     Last Modified: 7/28/20, 9:22 PM
  *     Project: AdvancedJoinMessages
  *     Copyright (C) 2020 CoachL_ck
  *
@@ -33,10 +33,10 @@ import java.util.List;
 
 public class JoinLeaveListener implements Listener {
 
-    private final Main plugin;
+    private final AJM plugin;
 
     public JoinLeaveListener() {
-        plugin = Main.getPlugin(Main.class);
+        plugin = AJM.getPlugin(AJM.class);
         Bukkit.getPluginManager().registerEvents(this, plugin);
     }
 
