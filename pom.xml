@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   ~     File: pom.xml
-  ~     Last Modified: 6/20/20, 9:01 PM
+  ~     Last Modified: 7/29/20, 2:35 AM
   ~     Project: AdvancedJoinMessages
   ~     Copyright (C) 2020 CoachL_ck
   ~
@@ -26,7 +26,7 @@
 
     <groupId>io.github.coachluck</groupId>
     <artifactId>AdvancedJoinMessages</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
     <name>AdvancedJoinMessages</name>
@@ -71,7 +71,7 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.12-R0.1-SNAPSHOT</version>
+            <version>1.13-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
