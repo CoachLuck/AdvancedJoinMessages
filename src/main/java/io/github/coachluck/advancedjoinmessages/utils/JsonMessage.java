@@ -1,6 +1,6 @@
 /*
  *     File: JsonMessage.java
- *     Last Modified: 6/20/20, 9:41 PM
+ *     Last Modified: 7/28/20, 9:11 PM
  *     Project: AdvancedJoinMessages
  *     Copyright (C) 2020 CoachL_ck
  *
@@ -27,6 +27,8 @@ import org.json.simple.JSONObject;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  *
@@ -132,11 +134,29 @@ public class JsonMessage {
                 } else if (colors[i].length() < 1) {
                     colors[i] = "{\"text\":\"\"}";
                 } else {
-                    ChatColor color = ChatColor.getByChar(colors[i].substring(0, 1));
-                    colors[i] = "{\"text\":\"" + colors[i].substring(1, colors[i].length()) + "\",\"color\":\"" + color.name().toLowerCase(Locale.US) + "\"}";
+                    String colorChar = colors[i].substring(0, 1);
+                    ChatColor color = ChatColor.getByChar(colorChar);
+                    String end = "\"}";
+                    if(colorChar.equalsIgnoreCase("l")) {
+                        Pattern pattern = Pattern.compile("\"color\":\"(.*)\"");
+                        Matcher matcher = pattern.matcher(colors[i - 1]);
+                        if(matcher.find()) {
+                            String removed = matcher.group(0).replaceAll("\"color\":\"", "");
+                            removed = removed.replaceAll("\"", "");
+                            ChatColor prevChatColor = ChatColor.valueOf(removed.toUpperCase());
+                            colors[i] = "{\"text\":\"" + colors[i].substring(1) + "\",\"color\":\"" + prevChatColor.name().toLowerCase(Locale.US);
+                        } else {
+                            colors[i] = "{\"text\":\"" + colors[i].substring(1) + "\",\"color\":\"" + color.name().toLowerCase(Locale.US);
+                        }
+                        end = "\",\"bold\":\"true" + end;
+                    } else {
+                        colors[i] = "{\"text\":\"" + colors[i].substring(1) + "\",\"color\":\"" + color.name().toLowerCase(Locale.US);
+                    }
+                    colors[i] = colors[i] + end;
                 }
                 if (i + 1 != colors.length) colors[i] = colors[i] + ",";
             }
+
             strings = colors;
         }
 

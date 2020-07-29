@@ -1,6 +1,6 @@
 /*
  *     File: MainCommand.java
- *     Last Modified: 6/20/20, 9:41 PM
+ *     Last Modified: 7/28/20, 2:46 PM
  *     Project: AdvancedJoinMessages
  *     Copyright (C) 2020 CoachL_ck
  *
@@ -33,6 +33,7 @@ public class MainCommand implements CommandExecutor {
         Main plugin = Main.getPlugin(Main.class);
         if(!sender.hasPermission(plugin.getConfig().getString("General.Reload-Permission"))) {
             ChatUtil.sendMsg(sender, plugin.getConfig().getString("General.Permission-Message"));
+            return true;
         }
         plugin.reloadMessages();
 

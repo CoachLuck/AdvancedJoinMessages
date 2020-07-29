@@ -1,6 +1,6 @@
 /*
  *     File: ChatUtil.java
- *     Last Modified: 6/20/20, 9:41 PM
+ *     Last Modified: 7/28/20, 3:04 PM
  *     Project: AdvancedJoinMessages
  *     Copyright (C) 2020 CoachL_ck
  *
@@ -23,6 +23,9 @@ package io.github.coachluck.advancedjoinmessages.utils;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ChatUtil {
 
     /**
@@ -42,4 +45,14 @@ public class ChatUtil {
     public static void sendMsg(CommandSender sender, String message) {
         sender.sendMessage(format(message));
     }
+
+    public static void sendListMsg(CommandSender sender, List<String> message) {
+        message.forEach(s -> sendMsg(sender, s));
+    }
+
+    public static void sendListMsg(CommandSender sender, ArrayList<String> message) {
+        message.forEach(s -> sendMsg(sender, s));
+    }
+
+
 }
