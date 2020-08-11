@@ -2,7 +2,7 @@
 Add hover events and command executables to join/leave messages.
 
 ### Default Configuration
-```
+```Yaml
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 #     INFORMATION       INFORMATION     INFORMATION     INFORMATION     INFORMATION #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
