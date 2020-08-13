@@ -1,6 +1,6 @@
 /*
  *     File: JsonMessage.java
- *     Last Modified: 7/28/20, 9:11 PM
+ *     Last Modified: 8/13/20, 2:15 AM
  *     Project: AdvancedJoinMessages
  *     Copyright (C) 2020 CoachL_ck
  *
@@ -20,6 +20,8 @@
 
 package io.github.coachluck.advancedjoinmessages.utils;
 
+import net.md_5.bungee.api.ChatMessageType;
+import net.md_5.bungee.chat.ComponentSerializer;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -81,6 +83,12 @@ public class JsonMessage {
      * @param player to send the message to.
      */
     public static void sendRawJson(String json, Player... player) {
+        if(getServerVersion().startsWith("v1_16")) {
+            for(Player p : player) {
+                p.spigot().sendMessage(ChatMessageType.CHAT, ComponentSerializer.parse(json));
+            }
+            return;
+        }
         String nmsClass = (!getServerVersion().startsWith("v1_7_R") ? "IChatBaseComponent$" : "") + "ChatSerializer";
         for (Player p : player) {
             try {
